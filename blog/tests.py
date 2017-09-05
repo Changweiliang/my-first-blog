@@ -1,3 +1,8 @@
 from django.test import TestCase
+from . import models
 
-# Create your tests here.
+
+class PostModelTests(TestCase):
+    def test_query_of_post_foreign_key(self):
+        pass
+

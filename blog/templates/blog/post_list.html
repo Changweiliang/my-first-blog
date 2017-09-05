@@ -5,6 +5,13 @@
     <title>Changwei Liang's Blog</title>
 </head>
 <body>
-    <p>Welcome to Changwei Liang's Blog</p>
+    <p>Welcome to Changwei Liang's Blog</p><br>
+    {% for blog in post_blog_list %}
+        <div>
+        <h1><a href="/">{{ blog.title }}</a></h1>
+        <p1>Published on: {{ blog.published_date }}</p1><br>
+        <p2>{{ blog.text|linebreaksbr }}</p2>
+        </div>
+    {% endfor %}
 </body>
 </html>
