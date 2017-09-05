@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
 
 {% block content%}
-<h1>{{ post.title }}</h1><br>
-<p1>{{ post.published_date }}     {{ post.author.username }}</p1><br>
-<p2>{{ post.text|linebreaksbr }}</p2>
+    <h1>{{ post.title }}</h1><br>
+        <p1>Published on: {{ post.published_date }}     <strong>Author: </strong>{{ post.author.username }}</p1><br>
+        <p2>{{ post.text|linebreaksbr }}</p2>
 {% endblock %}
