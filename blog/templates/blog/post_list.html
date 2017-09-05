@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Changwei Liang's Blog</title>
-</head>
-<body>
-    <p>Welcome to Changwei Liang's Blog</p><br>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<img src="images/xiaofanli.jpg" alt="Weisuo Zhao" style="">
     {% for post in post_blog_list %}
-        <div>
-        <h1><a href="/">{{ post.title }}</a></h1>
-        <p1>Published on: {{ post.published_date }}</p1><br>
-        <p2>{{ post.text|linebreaksbr }}</p2>
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
