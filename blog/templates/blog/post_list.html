@@ -6,12 +6,12 @@
 </head>
 <body>
     <p>Welcome to Changwei Liang's Blog</p><br>
-    {% for blog in post_blog_list %}
+    {% for post in post_blog_list %}
         <div>
-        <h1><a href="/">{{ blog.title }}</a></h1>
-        <p1> {{ blog.author.username }}</p1>
-        <p1>Published on: {{ blog.published_date }}</p1><br>
-        <p2>{{ blog.text|linebreaksbr }}</p2>
+        <h1><a href="/">{{ post.title }}</a></h1>
+        <p1> {{ post.author.username }}</p1>
+        <p1>Published on: {{ post.published_date }}</p1><br>
+        <p2>{{ post.text|linebreaksbr }}</p2>
         </div>
     {% endfor %}
 </body>
