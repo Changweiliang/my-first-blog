@@ -1,7 +1,19 @@
 {% extends "blog/base.html" %}
 
 {% block content%}
-<h1>{{ post.title }}</h1><br>
-<p1>{{ post.published_date }}     {{ post.author.username }}</p1><br>
-<p2>{{ post.text|linebreaksbr }}</p2>
+<h1>{{ blog_detail.title }}</h1><br>
+<p1>{{ blog_detail.published_date }}     {{ blog_detail.author.username }}</p1><br>
+<p2>{{ blog_detail.text|linebreaksbr }}</p2>
+<br>
+<br>
+{% for comment in blog_comment %}
+    <li>{{ comment.comment_author }}</li>
+    <li>{{ comment.comment_text }}</li>
+    <li>{{ comment.comment_published_date }}</li>
+{% endfor %}
+<form action="{% url 'blog:post_detail' blog_detail.id %}" method="post">
+    {% csrf_token %}
+    {{ comment_form.as_ul }}
+    <input type="submit" value="Submit" />
+</form>
 {% endblock %}
