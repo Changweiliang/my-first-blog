@@ -13,7 +13,7 @@
 {% endfor %}
 <form action="{% url 'blog:post_detail' blog_detail.id %}" method="post">
     {% csrf_token %}
-    {{ comment_form.as_ul }}
+    {{ comment_form.as_table }}
     <input type="submit" value="Submit" />
 </form>
 {% endblock %}

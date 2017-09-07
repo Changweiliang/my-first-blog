@@ -18,11 +18,15 @@ def post_detail(request, post_id):
     if request.method == 'POST':
         comment_form = BlogPostForm(request.POST)
 
-        print(comment_form.is_valid())
+        # print(comment_form.is_valid())
         if comment_form.is_valid():
-            new_comment = PostComment(**comment_form.cleaned_data)
+            comment_cd = comment_form.cleaned_data
+            comment_cd['comment_post'] = post
+            comment_cd['comment_published_date'] = timezone.now()
+            new_comment = PostComment(**comment_cd)
             new_comment.save()
-            print(PostComment.objects.all())
+            print(comment_form.cleaned_data)
+            # print(PostComment.objects.all())
             context = {
                 'blog_detail': post,
                 'blog_comment': post_comment,
