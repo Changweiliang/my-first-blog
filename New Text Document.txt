@@ -1,0 +1,7 @@
+<!--
+<form action="{% url 'blog:post_detail' %}" method="post">
+    {% csrf_token %}
+    {{ comments }}
+    <input type="submit" value="Submit" />
+</form>
+-->
